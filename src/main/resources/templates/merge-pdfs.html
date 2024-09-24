@@ -16,7 +16,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon organize">add_to_photos</span>
                 <h1 class="tool-header-text" th:text="#{merge.header}"></h1>
-                <p class="tool-header-des" th:if="{merge.description}" th:text="#{merge.description}"></p>
+                <p class="tool-header-des" th:text="#{merge.description}"></p>
               </div>
               <form action="api/v1/general/merge-pdfs" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
