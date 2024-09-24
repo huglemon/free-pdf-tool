@@ -2,6 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
   <th:block th:insert="~{fragments/common :: head(title=#{changeMetadata.title}, header=#{changeMetadata.header})}"></th:block>
+  <meta th:if="${changeMetadata.des}" name="description" th:content="${changeMetadata.des}" />
   </head>
 
   <body>
@@ -14,7 +15,8 @@
             <div class="col-md-6 bg-card">
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon other">assignment</span>
-                <span class="tool-header-text" th:text="#{changeMetadata.header}"></span>
+                <h1 class="tool-header-text" th:text="#{changeMetadata.header}"></h1>
+                <p class="tool-header-des" th:if="${changeMetadata.des}" th:text="#{changeMetadata.des}"></p>
               </div>
               <form method="post" id="form1" enctype="multipart/form-data" th:action="@{'/api/v1/misc/update-metadata'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='application/pdf')}"></div>

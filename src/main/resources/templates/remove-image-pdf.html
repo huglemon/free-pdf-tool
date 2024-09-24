@@ -4,7 +4,7 @@
 <head>
     <th:block
             th:insert="~{fragments/common :: head(title=#{removeImage.title}, header=#{removeImage.header})}"></th:block>
-    <link rel="stylesheet" th:href="@{'/css/removeImage.css'}">
+    <meta th:if="${removeImage.des}" name="description" th:content="${removeImage.des}" />
 </head>
 
 <body>
@@ -18,7 +18,8 @@
                 <div class="col-md-6 bg-card">
                     <div class="tool-header">
                         <span class="material-symbols-rounded tool-header-icon word">remove_selection</span>
-                        <span class="tool-header-text" th:text="#{removeImage.header}"></span>
+                        <h1 class="tool-header-text" th:text="#{removeImage.header}"></h1>
+                        <p class="tool-header-des" th:if="${removeImage.des}" th:text="#{removeImage.des}"></p>
                     </div>
                         <form action="api/v1/general/remove-image-pdf" method="post" enctype="multipart/form-data">
                         <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='application/pdf')}"></div>

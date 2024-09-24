@@ -2,6 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
   <th:block th:insert="~{fragments/common :: head(title=#{pdfToImage.title}, header=#{pdfToImage.header})}"></th:block>
+  <meta th:if="${PDFToImage.des}" name="description" th:content="${PDFToImage.des}" />
   </head>
 
   <body>
@@ -15,7 +16,8 @@
             <div class="col-md-6 bg-card">
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon image">image</span>
-                <span class="tool-header-text" th:text="#{pdfToImage.header}"></span>
+                <h1 class="tool-header-text" th:text="#{pdfToImage.header}"></h1>
+                <p class="tool-header-des" th:if="${pdfToImage.des}" th:text="#{pdfToImage.des}"></p>
               </div>
               <p th:text="#{processTimeWarning}"></p>
               <p th:if="${!isPython}" th:text="#{pdfToImage.info}">Python is not installed. Required for WebP conversion.</p>

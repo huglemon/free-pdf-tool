@@ -5,6 +5,7 @@
 <head>
   <th:block th:insert="~{fragments/common :: head(title=#{autoSplitPDF.title}, header=#{autoSplitPDF.header})}">
   </th:block>
+  <meta th:if="${autoSplitPDF.des}" name="description" th:content="${autoSplitPDF.des}" />
 </head>
 
 <body>
@@ -18,7 +19,8 @@
           <div class="col-md-6 bg-card">
             <div class="tool-header">
               <span class="material-symbols-rounded tool-header-icon advance">cut</span>
-              <span class="tool-header-text" th:text="#{autoSplitPDF.header}"></span>
+              <h1 class="tool-header-text" th:text="#{autoSplitPDF.header}"></h1>
+              <p class="tool-header-des" th:if="${autoSplitPDF.des}" th:text="#{autoSplitPDF.des}"></p>
             </div>
 
             <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/misc/auto-split-pdf'}">

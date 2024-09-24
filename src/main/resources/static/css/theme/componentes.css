@@ -167,10 +167,13 @@ td {
 /* Tool Page Header*/
 .tool-header {
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .tool-header .tool-header-icon {
-  margin: 0px 1rem;
+  position: absolute;
+  right: 0;
+  /* margin: 0px 1rem; */
   height: 4rem;
   width: 4rem;
   border-radius: 25px;
@@ -187,6 +190,11 @@ td {
   font-size: 2.5rem;
   font-weight: 400;
   vertical-align: middle;
+}
+
+.tool-header .tool-header-des {
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface-5);
 }
 
 /* Home Card Colors*/

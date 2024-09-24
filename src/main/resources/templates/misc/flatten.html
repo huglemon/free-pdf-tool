@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
-  <th:block th:insert="~{fragments/common :: head(title=#{flatten.title}, header=#{flatten.header})}"></th:block>
+    <th:block th:insert="~{fragments/common :: head(title=#{flatten.title}, header=#{flatten.header})}"></th:block>
+    <meta th:if="${flatten.des}" name="description" th:content="${flatten.des}" />
   </head>
 
   <body>
@@ -15,7 +16,8 @@
             <div class="col-md-6 bg-card">
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon other">layers_clear</span>
-                <span class="tool-header-text" th:text="#{flatten.header}"></span>
+                <h1 class="tool-header-text" th:text="#{flatten.header}"></h1>
+                <p class="tool-header-des" th:if="${flatten.des}" th:text="#{flatten.des}"></p>
               </div>
               <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/misc/flatten'}" id="pdfForm" class="mb-3">
                 <div class="custom-file">
@@ -24,7 +26,7 @@
                 <div class="form-check ms-3">
                   <input type="checkbox" id="flattenOnlyForms" name="flattenOnlyForms">
                   <label for="flattenOnlyForms" th:text="#{flatten.flattenOnlyForms}" ></label>
-                </div>         
+                </div>
                 <br>
                 <button type="submit" id="submitBtn" class="btn btn-primary" th:text="#{flatten.submit}"></button>
               </form>

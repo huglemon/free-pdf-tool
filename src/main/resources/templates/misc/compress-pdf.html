@@ -4,6 +4,7 @@
 
 <head>
   <th:block th:insert="~{fragments/common :: head(title=#{compress.title}, header=#{compress.header})}"></th:block>
+  <meta th:if="${compress.des}" name="description" th:content="${compress.des}" />
 </head>
 
 <body>
@@ -17,7 +18,8 @@
           <div class="col-md-6 bg-card">
             <div class="tool-header">
               <span class="material-symbols-rounded tool-header-icon advance">zoom_in_map</span>
-              <span class="tool-header-text" th:text="#{compress.header}"></span>
+              <h1 class="tool-header-text" th:text="#{compress.header}"></h1>
+              <p class="tool-header-des" th:if="${compress.des}" th:text="#{compress.des}"></p>
             </div>
             <form action="#" th:action="@{'/api/v1/misc/compress-pdf'}" method="post" enctype="multipart/form-data">
               <div
