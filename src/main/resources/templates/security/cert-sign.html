@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
-  <th:block th:insert="~{fragments/common :: head(title=#{certSign.title}, header=#{certSign.header})}"></th:block>
-    <meta th:if="${certSign.description}" name="description" th:content="${certSign.description}" />
+    <th:block th:insert="~{fragments/common :: head(title=#{certSign.title}, header=#{certSign.header})}"></th:block>
+    <meta name="description" th:content="#{certSign.description}" />
   </head>
 
   <body>
@@ -16,7 +16,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon security">workspace_premium</span>
                 <h1 class="tool-header-text" th:text="#{certSign.header}"></h1>
-                <p class="tool-header-des" th:if="${certSign.description}" th:text="#{certSign.description}"></p>
+                <p class="tool-header-des" th:text="#{certSign.description}"></p>
               </div>
               <form action="api/v1/security/cert-sign" method="post" enctype="multipart/form-data">
                 <div class="mb-3">

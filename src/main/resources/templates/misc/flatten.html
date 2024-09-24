@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
     <th:block th:insert="~{fragments/common :: head(title=#{flatten.title}, header=#{flatten.header})}"></th:block>
-    <meta th:if="${flatten.description}" name="description" th:content="${flatten.description}" />
+    <meta name="description" th:content="#{flatten.description}" />
   </head>
 
   <body>
@@ -17,7 +17,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon other">layers_clear</span>
                 <h1 class="tool-header-text" th:text="#{flatten.header}"></h1>
-                <p class="tool-header-des" th:if="${flatten.description}" th:text="#{flatten.description}"></p>
+                <p class="tool-header-des" th:text="#{flatten.description}"></p>
               </div>
               <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/misc/flatten'}" id="pdfForm" class="mb-3">
                 <div class="custom-file">

@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
     <th:block th:insert="~{fragments/common :: head(title=#{pdfOrganiser.title}, header=#{pdfOrganiser.header})}"></th:block>
-    <meta th:if="${pdfOrganiser.description}" name="description" th:content="${pdfOrganiser.description}" />
+      <meta name="description" th:content="#{pdfOrganiser.description}" />
   </head>
 
   <body>
@@ -16,7 +16,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon organize">format_list_bulleted</span>
                 <h1 class="tool-header-text" th:text="#{pdfOrganiser.header}"></h1>
-                <p class="tool-header-des" th:if="${pdfOrganiser.description}" th:text="#{pdfOrganiser.description}"></p>
+                <p class="tool-header-des" th:text="#{pdfOrganiser.description}"></p>
               </div>
 
               <form th:action="@{'/api/v1/general/rearrange-pages'}" method="post" enctype="multipart/form-data">

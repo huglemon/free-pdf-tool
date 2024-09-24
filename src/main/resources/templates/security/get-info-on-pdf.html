@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
     <th:block th:insert="~{fragments/common :: head(title=#{getPdfInfo.title}, header=#{getPdfInfo.header})}"></th:block>
-    <meta th:if="${getPdfInfo.description}" name="description" th:content="${getPdfInfo.description}" />
+    <meta name="description" th:content="#{getPdfInfo.description}" />
   </head>
 
   <body>
@@ -16,7 +16,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon other">info</span>
                 <h1 class="tool-header-text" th:text="#{getPdfInfo.header}"></h1>
-                <p class="tool-header-des" th:if="${getPdfInfo.description}" th:text="#{getPdfInfo.description}"></p>
+                <p class="tool-header-des" th:text="#{getPdfInfo.description}"></p>
               </div>
               <form id="pdfInfoForm" method="post" enctype="multipart/form-data" th:action="@{'/api/v1/security/get-info-on-pdf'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, remoteCall='false', accept='application/pdf')}"></div>

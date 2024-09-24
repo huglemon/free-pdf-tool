@@ -12,7 +12,7 @@
         <div class="container">
           <div th:insert="~{fragments/errorBanner.html :: errorBanner}"></div>
           <div class="bg-card text-center">
-            <h1 class="display-2" th:text="#{oops}"></h1>
+            <span class="display-2" th:text="#{oops}"></sp>
             <p class="lead" th:if="${param.status == '404'}" th:text="#{error.404.1}"></p>
             <p class="lead" th:unless="${param.status == '404'}" th:text="#{error.404.2}"></p>
             <br>
