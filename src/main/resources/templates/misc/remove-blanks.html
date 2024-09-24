@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
     <th:block th:insert="~{fragments/common :: head(title=#{removeBlanks.title}, header=#{removeBlanks.header})}"></th:block>
-    <meta th:if="${removeBlanks.des}" name="description" th:content="${removeBlanks.des}" />
+    <meta th:if="${removeBlanks.description}" name="description" th:content="${removeBlanks.description}" />
   </head>
 
   <body>
@@ -16,7 +16,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon other">scan_delete</span>
                 <h1 class="tool-header-text" th:text="#{removeBlanks.header}"></h1>
-                <p class="tool-header-des" th:if="${removeBlanks.des}" th:text="#{removeBlanks.des}"></p>
+                <p class="tool-header-des" th:if="${removeBlanks.description}" th:text="#{removeBlanks.description}"></p>
               </div>
               <form id="multiPdfForm" th:action="@{'/api/v1/misc/remove-blanks'}" method="post" enctype="multipart/form-data">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='application/pdf')}"></div>
