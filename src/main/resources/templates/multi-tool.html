@@ -4,6 +4,7 @@
 
 <head>
   <th:block th:insert="~{fragments/common :: head(title=#{multiTool.title}, header=#{multiTool.header})}"></th:block>
+  <meta th:if="${multiTool.des}" name="description" th:content="${multiTool.des}" />
 </head>
 
 <body>
@@ -18,7 +19,8 @@
             <div class="bg-card">
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon advance">construction</span>
-                <span class="tool-header-text" th:text="#{multiTool.header}"></span>
+                <h1 class="tool-header-text" th:text="#{multiTool.header}"></h1>
+                <p class="tool-header-des" th:if="${multiTool.des}" th:text="#{multiTool.des}"></p>
               </div>
               <div class="mt-action-bar d-flex flex-wrap">
                 <div class="mt-filename">

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
-  <th:block th:insert="~{fragments/common :: head(title=#{split-by-size-or-count.title}, header=#{split-by-size-or-count.header})}"></th:block>
+    <th:block th:insert="~{fragments/common :: head(title=#{split-by-size-or-count.title}, header=#{split-by-size-or-count.header})}"></th:block>
+    <meta th:if="${split-by-size-or-count.des}" name="description" th:content="${split-by-size-or-count.des}" />
   </head>
 
   <body>
@@ -15,7 +16,8 @@
             <div class="col-md-6 bg-card">
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon advance">layers</span>
-                <span class="tool-header-text" th:text="#{overlay-pdfs.header}"></span>
+                <h1 class="tool-header-text" th:text="#{overlay-pdfs.header}"></h1>
+                <p class="tool-header-des" th:if="${overlay-pdfs.des}" th:text="#{overlay-pdfs.des}"></p>
               </div>
               <form id="overlayForm" method="post" enctype="multipart/form-data" th:action="@{'/api/v1/general/overlay-pdfs'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='application/pdf')}"></div>

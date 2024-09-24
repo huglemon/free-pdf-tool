@@ -9,6 +9,7 @@
     <th:block
       th:insert="~{fragments/common :: head(title=#{pipeline.title}, header=#{pipeline.header})}"
     ></th:block>
+    <meta th:if="${pipeline.des}" name="description" th:content="${pipeline.des}" />
     <link
       rel="stylesheet"
       th:href="@{'/css/pipeline.css'}"
@@ -30,7 +31,8 @@
             <div class="col-md-6 bg-card">
                 <div class="tool-header">
                   <span class="material-symbols-rounded tool-header-icon advance">family_history</span>
-                  <span class="tool-header-text" th:text="#{pipeline.header}"></span>
+                  <h1 class="tool-header-text" th:text="#{pipeline.header}"></h1>
+                  <p class="tool-header-des" th:if="${pipeline.des}" th:text="#{pipeline.des}"></p>
                 </div>
                 <div class="text-end text-top">
                   <button
