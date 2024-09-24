@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
     <th:block th:insert="~{fragments/common :: head(title=#{showJS.title}, header=#{showJS.header})}"></th:block>
-    <meta th:if="${showJS.description}" name="description" th:content="${showJS.description}" />
+    <meta name="description" th:content="#{showJS.description}" />
     <link th:href="@{'/css/prism.css'}" rel="stylesheet">
     <script th:src="@{'/js/thirdParty/prism.js'}"></script>
     <style>
@@ -25,7 +25,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon advance">javascript</span>
                 <h1 class="tool-header-text" th:text="#{showJS.header}"></h1>
-                <p class="tool-header-des" th:if="${showJS.description}" th:text="#{showJS.description}"></p>
+                <p class="tool-header-des" th:text="#{showJS.description}"></p>
               </div>
               <form id="pdfInfoForm" method="post" enctype="multipart/form-data" th:action="@{'/show-javascript'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, remoteCall='false', accept='application/pdf')}"></div>
