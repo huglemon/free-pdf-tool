@@ -17,7 +17,7 @@ pipeline/watchedFolders/
 pipeline/finishedFolders/
 #### Stirling-PDF Files ###
 customFiles/
-configs/
+# configs/
 watchedFolders/
 
 # Gradle
@@ -160,4 +160,3 @@ out/
 .mypy_cache
 .pytest_cache
 .ipynb_checkpoints
-

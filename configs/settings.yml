@@ -1,0 +1,23 @@
+security:
+    enableLogin: false # set to 'true' to enable login
+    csrfDisabled: false # Set to 'true' to disable CSRF protection (not recommended for production)
+
+system:
+    defaultLocale: 'en-US' # Set the default language (e.g. 'de-DE', 'fr-FR', etc)
+    googlevisibility: true # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
+    enableAlphaFunctionality: false # Set to enable functionality which might need more testing before it fully goes live (This feature might make no changes)
+    showUpdate: false # see when a new update is available
+    showUpdateOnlyAdmin: false # Only admins can see when a new update is available, depending on showUpdate it must be set to 'true'
+    customHTMLFiles: false # enable to have files placed in /customFiles/templates override the existing template html files
+
+ui:
+    appName: 'Free-PDF-Tool' # Application's visible name
+    homeDescription: 'A free online PDF tool offering various PDF editing and conversion features like merge, split, compress, and more.' # Short description or tagline shown on homepage.
+    appNameNavbar: 'Free-PDF-Tool' # Name displayed on the navigation bar
+
+endpoints:
+    toRemove: [] # List endpoints to disable (e.g. ['img-to-pdf', 'remove-pages'])
+    groupsToRemove: [] # List groups to disable (e.g. ['LibreOffice'])
+
+metrics:
+    enabled: true # 'true' to enable Info APIs (`/api/*`) endpoints, 'false' to disable
