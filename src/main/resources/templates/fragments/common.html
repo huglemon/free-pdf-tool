@@ -4,7 +4,7 @@
 
     <!-- Metadata -->
     <meta charset="utf-8">
-    <meta name="description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
+    <meta name="description" th:content="A free online PDF tool offering various PDF editing and conversion features like merge, split, compress, and more.">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,6 @@
 
     <link rel="preload" href="/fonts/google-symbol.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-
     <script th:src="@{'/js/thirdParty/fontfaceobserver.standalone.js'}"></script>
 
     <!-- Google MD Icons -->
@@ -69,7 +68,17 @@
     <script th:src="@{'/js/cacheFormInputs.js'}"  th:if="${currentPage != 'home'}"></script>
     <script th:src="@{'/js/tab-container.js'}"></script>
     <script th:src="@{'/js/darkmode.js'}"></script>
-  </th:block>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVB87V2F2X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QVB87V2F2X');
+    </script>
+</th:block>
 
 <th:block th:fragment="game">
     <dialog id="game-container-wrapper" class="game-container-wrapper" data-bs-modal>
