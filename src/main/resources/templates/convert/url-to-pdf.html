@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
   <th:block th:insert="~{fragments/common :: head(title=#{URLToPDF.title}, header=#{URLToPDF.header})}"></th:block>
-  <meta th:if="${URLToPDF.des}" name="description" th:content="${URLToPDF.des}" />
+  <meta th:if="${URLToPDF.description}" name="description" th:content="${URLToPDF.description}" />
   </head>
 
   <body>
@@ -17,7 +17,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon convert">link</span>
                 <h1 class="tool-header-text" th:text="#{URLToPDF.header}"></h1>
-                <p class="tool-header-des" th:if="${URLToPDF.des}" th:text="#{URLToPDF.des}"></p>
+                <p class="tool-header-des" th:if="${URLToPDF.description}" th:text="#{URLToPDF.description}"></p>
               </div>
               <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/convert/url/pdf'}">
                 <input type="text" class="form-control" id="urlInput" name="urlInput" placeholder="http://">

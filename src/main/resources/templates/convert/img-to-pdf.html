@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
   <th:block th:insert="~{fragments/common :: head(title=#{imageToPDF.title}, header=#{imageToPDF.header})}"></th:block>
-  <meta th:if="${imageToPDF.des}" name="description" th:content="${imageToPDF.des}" />
+  <meta th:if="${imageToPDF.description}" name="description" th:content="${imageToPDF.description}" />
   </head>
 
   <body>
@@ -17,7 +17,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon image">image</span>
                 <h1 class="tool-header-text" th:text="#{imageToPDF.header}"></h1>
-                <p class="tool-header-des" th:if="${imageToPDF.des}" th:text="#{imageToPDF.des}"></p>
+                <p class="tool-header-des" th:if="${imageToPDF.description}" th:text="#{imageToPDF.description}"></p>
               </div>
               <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/convert/img/pdf'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='image/*', inputText=#{imgPrompt})}"></div>

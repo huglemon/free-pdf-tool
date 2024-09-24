@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
     <th:block th:insert="~{fragments/common :: head(title=#{pdfToSinglePage.title}, header=#{pdfToSinglePage.header})}"></th:block>
-    <meta th:if="${pdfToSinglePage.des}" name="description" th:content="${pdfToSinglePage.des}" />
+    <meta th:if="${pdfToSinglePage.description}" name="description" th:content="${pdfToSinglePage.description}" />
   </head>
 
   <body>
@@ -16,7 +16,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon organize">looks_one</span>
                 <h1 class="tool-header-text" th:text="#{pdfToSinglePage.header}"></h1>
-                <p class="tool-header-des" th:if="${pdfToSinglePage.des}" th:text="#{pdfToSinglePage.des}"></p>
+                <p class="tool-header-des" th:if="${pdfToSinglePage.description}" th:text="#{pdfToSinglePage.description}"></p>
               </div>
               <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/general/pdf-to-single-page'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='application/pdf')}"></div>

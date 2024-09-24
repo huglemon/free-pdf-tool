@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
   <th:block th:insert="~{fragments/common :: head(title=#{PDFToText.title}, header=#{PDFToText.header})}"></th:block>
-  <meta th:if="${PDFToText.des}" name="description" th:content="${PDFToText.des}" />
+  <meta th:if="${PDFToText.description}" name="description" th:content="${PDFToText.description}" />
   </head>
 
   <body>
@@ -17,7 +17,7 @@
               <div class="tool-header">
                 <span class="material-symbols-rounded tool-header-icon convert">text_fields</span>
                 <h1 class="tool-header-text" th:text="#{PDFToText.header}"></h1>
-                <p class="tool-header-des" th:if="${PDFToText.des}" th:text="#{PDFToText.des}"></p>
+                <p class="tool-header-des" th:if="${PDFToText.description}" th:text="#{PDFToText.description}"></p>
               </div>
               <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/convert/pdf/text'}">
                 <div th:replace="~{fragments/common :: fileSelector(name='fileInput', multipleInputsForSingleRequest=false, accept='application/pdf')}"></div>

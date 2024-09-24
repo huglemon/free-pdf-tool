@@ -4,7 +4,7 @@
 
 <head>
   <th:block th:insert="~{fragments/common :: head(title=#{fileToPDF.title}, header=#{fileToPDF.header})}"></th:block>
-  <meta th:if="${fileToPDF.des}" name="description" th:content="${fileToPDF.des}" />
+  <meta th:if="${fileToPDF.description}" name="description" th:content="${fileToPDF.description}" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="tool-header">
               <span class="material-symbols-rounded tool-header-icon convert">draft</span>
               <h1 class="tool-header-text" th:text="#{fileToPDF.header}"></h1>
-              <p class="tool-header-des" th:if="${fileToPDF.des}" th:text="#{fileToPDF.des}"></p>
+              <p class="tool-header-des" th:if="${fileToPDF.description}" th:text="#{fileToPDF.description}"></p>
             </div>
             <p th:text="#{processTimeWarning}"></p>
             <form method="post" enctype="multipart/form-data" th:action="@{'/api/v1/convert/file/pdf'}">
