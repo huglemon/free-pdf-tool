@@ -1,4 +1,4 @@
-<th:block th:fragment="head(description)"
+<th:block th:fragment="head"
           th:with="description=${description ?: 'A free online PDF tool offering various PDF editing and conversion features like merge, split, compress, and more.'}">
     <!-- Title -->
     <title th:text="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')"></title>
