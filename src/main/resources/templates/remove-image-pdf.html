@@ -3,8 +3,7 @@
       xmlns:th="https://www.thymeleaf.org">
 <head>
     <th:block
-            th:insert="~{fragments/common :: head(title=#{removeImage.title}, header=#{removeImage.header})}"></th:block>
-    <meta name="description" th:content="#{removeImage.description}" />
+            th:insert="~{fragments/common :: head(title=#{removeImage.title}, description=#{removeImage.description}, header=#{removeImage.header})}"></th:block>
 </head>
 
 <body>

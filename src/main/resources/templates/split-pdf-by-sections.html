@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
-    <th:block th:insert="~{fragments/common :: head(title=#{split-by-sections.title}, header=#{split-by-sections.header})}"></th:block>
-    <meta name="description" th:content="#{split-by-sections.description}" />
+    <th:block th:insert="~{fragments/common :: head(title=#{split-by-sections.title}, description=#{split-by-sections.description}, header=#{split-by-sections.header})}"></th:block>
   </head>
 
   <body>

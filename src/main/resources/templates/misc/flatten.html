@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
   <head>
-    <th:block th:insert="~{fragments/common :: head(title=#{flatten.title}, header=#{flatten.header})}"></th:block>
-    <meta name="description" th:content="#{flatten.description}" />
+    <th:block th:insert="~{fragments/common :: head(title=#{flatten.title}, description=#{flatten.description}, header=#{flatten.header})}"></th:block>
   </head>
 
   <body>

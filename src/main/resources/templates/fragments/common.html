@@ -1,7 +1,7 @@
 <th:block th:fragment="head"
           th:with="description=${description ?: 'A free online PDF tool offering various PDF editing and conversion features like merge, split, compress, and more.'}">
     <!-- Title -->
-    <title th:text="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')"></title>
+    <title th:text="(${title} != null and ${title} != '' ?  ${title} + '-': '') + ${@appName}"></title>
 
     <!-- Metadata -->
     <meta charset="utf-8">
