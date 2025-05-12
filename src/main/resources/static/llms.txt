@@ -1,0 +1,61 @@
+# http://free-pdf-tool.com llms.txt
+
+- [Free PDF Tool](https://free-pdf-tool.com/): Free online tool for editing and converting PDF files easily.
+- [Merge PDFs Online](https://free-pdf-tool.com/merge-pdfs): Easily merge multiple PDFs into one organized document.
+- [Split PDF Tool](https://free-pdf-tool.com/split-pdfs): Easily split large PDF documents into smaller files.
+- [Rotate PDF Pages](https://free-pdf-tool.com/rotate-pdf): Easily rotate PDF pages for better viewing and printing.
+- [Crop PDF Tool](https://free-pdf-tool.com/crop): Easily crop PDF pages to optimize layout and content.
+- [PDF Page Organizer](https://free-pdf-tool.com/pdf-organizer): Easily rearrange and organize PDF pages for better management.
+- [PDF Page Remover](https://free-pdf-tool.com/remove-pages): Easily delete specified pages from PDF documents online.
+- [Multi Page Layout](https://free-pdf-tool.com/multi-page-layout): Merge multiple PDF pages into a single page layout.
+- [Adjust PDF Page Scale](https://free-pdf-tool.com/scale-pages): Easily adjust PDF page sizes and scales for optimal layout.
+- [PDF Page Extractor](https://free-pdf-tool.com/extract-page): Easily extract specific pages from PDF documents online.
+- [PDF to Single Page](https://free-pdf-tool.com/pdf-to-single-page): Merge multi-page PDFs into a single oversized page.
+- [Image to PDF Converter](https://free-pdf-tool.com/img-to-pdf): Convert images to PDF with fitting and rotation options.
+- [File to PDF Converter](https://free-pdf-tool.com/file-to-pdf): Easily convert various file formats to PDF online.
+- [URL to PDF Conversion](https://free-pdf-tool.com/url-to-pdf): Convert web pages to PDF for offline viewing and archiving.
+- [HTML to PDF Converter](https://free-pdf-tool.com/html-to-pdf): Convert HTML files to PDF for easy sharing and printing.
+- [Markdown to PDF Tool](https://free-pdf-tool.com/markdown-to-pdf): Convert Markdown files to PDF for easy sharing.
+- [PDF to Image Converter](https://free-pdf-tool.com/pdf-to-img): Convert PDF documents to various image formats easily.
+- [PDF to PDF/A Conversion](https://free-pdf-tool.com/pdf-to-pdfa): Convert PDF documents to PDF/A for long-term preservation.
+- [PDF to Word Converter](https://free-pdf-tool.com/pdf-to-word): Easily convert PDF documents to editable Word formats.
+- [PDF to Presentation](https://free-pdf-tool.com/pdf-to-presentation): Convert PDF documents into presentation formats like PPT.
+- [PDF to Text Conversion](https://free-pdf-tool.com/pdf-to-text): Convert PDF documents to text or RTF formats easily.
+- [PDF to HTML Conversion](https://free-pdf-tool.com/pdf-to-html): Convert PDF documents to HTML for easy web sharing.
+- [PDF to XML Conversion](https://free-pdf-tool.com/pdf-to-xml): Convert PDF documents to XML for easy data extraction.
+- [PDF to CSV Tool](https://free-pdf-tool.com/pdf-to-csv): Easily convert PDF table data to CSV format.
+- [PDF Password Protection](https://free-pdf-tool.com/add-password): Easily add password protection to your PDF documents.
+- [Remove PDF Password](https://free-pdf-tool.com/remove-password): Easily remove password protection from PDF documents.
+- [Change PDF Permissions](https://free-pdf-tool.com/change-permissions): Easily manage PDF permissions for security and control.
+- [Sign PDFs Online](https://free-pdf-tool.com/sign): Easily sign PDFs with images or text input.
+- [PDF Certificate Signing](https://free-pdf-tool.com/cert-sign): Easily sign PDF documents with digital certificates online.
+- [Remove PDF Signatures](https://free-pdf-tool.com/remove-cert-sign): Easily remove digital signatures from PDF documents.
+- [Sanitize PDF Files](https://free-pdf-tool.com/sanitize-pdf): Easily sanitize PDF files for enhanced security and privacy.
+- [Auto Redact Feature](https://free-pdf-tool.com/auto-redact): Automatically redact sensitive text from PDF documents efficiently.
+- [PDF Stamp Tool](https://free-pdf-tool.com/stamp): Easily add custom stamps and watermarks to PDFs.
+- [Free PDF Tool](https://free-pdf-tool.com/view-pdf): Easily view, edit, and manage PDF documents online.
+- [Add Page Numbers](https://free-pdf-tool.com/add-page-numbers): Easily add and customize page numbers in PDF documents.
+- [Add Image to PDF](https://free-pdf-tool.com/add-image): Easily add images to PDF documents for enhanced visuals.
+- [Add Watermark Feature](https://free-pdf-tool.com/add-watermark): Easily add custom watermarks to your PDF documents.
+- [Change PDF Metadata](https://free-pdf-tool.com/change-metadata): Easily modify PDF metadata like title and author.
+- [OCR PDF Tool](https://free-pdf-tool.com/ocr-pdf): Extract text from scanned PDFs with OCR processing tools.
+- [Extract Images from PDF](https://free-pdf-tool.com/extract-images): Easily extract images from PDF documents in various formats.
+- [Extract Images from Scans](https://free-pdf-tool.com/extract-image-scans): Easily extract images from scanned documents online.
+- [Flatten PDFs](https://free-pdf-tool.com/flatten): Convert interactive PDF elements into static content easily.
+- [Remove Blank Pages](https://free-pdf-tool.com/remove-blanks): Easily remove blank pages from PDF documents for optimization.
+- [Remove PDF Annotations](https://free-pdf-tool.com/remove-annotations): Easily remove annotations from PDF documents for clarity.
+- [PDF Comparison Tool](https://free-pdf-tool.com/compare): Easily compare two PDF documents and highlight differences.
+- [Get PDF Info](https://free-pdf-tool.com/get-info-on-pdf): View and download detailed metadata of PDF documents.
+- [Remove Image from PDF](https://free-pdf-tool.com/remove-image-pdf): Easily remove images from PDF documents for better layout.
+- [PDF Processing Pipeline](https://free-pdf-tool.com/pipeline): Automate PDF processing with merging, splitting, and more.
+- [PDF Multi Tool](https://free-pdf-tool.com/multi-tool): Efficiently manage and process multiple PDF documents easily.
+- [Image Adjustment Tool](https://free-pdf-tool.com/adjust-contrast): Easily adjust contrast, brightness, and saturation of images.
+- [PDF Compression Tool](https://free-pdf-tool.com/compress-pdf): Easily compress PDF files for efficient storage and sharing.
+- [Repair PDFs](https://free-pdf-tool.com/repair): Repair damaged PDF documents for integrity and readability.
+- [Auto Rename PDF](https://free-pdf-tool.com/auto-rename): Automatically rename PDF files for better organization and management.
+- [Auto Split PDF](https://free-pdf-tool.com/auto-split-pdf): Automatically split large PDFs into independent documents easily.
+- [Show JavaScript](https://free-pdf-tool.com/show-javascript): View and download JavaScript from PDF documents easily.
+- [Split PDF Tool](https://free-pdf-tool.com/split-by-size-or-count): Easily split large PDFs by size or page count.
+- [Overlay PDF Files](https://free-pdf-tool.com/overlay-pdf): Easily overlay multiple PDF documents for comparison and analysis.
+- [Split PDF Sections](https://free-pdf-tool.com/split-pdf-by-sections): Easily split PDF documents into multiple sections for management.
+- [Free PDF Tool](https://free-pdf-tool.com/?lang=zh_CN): Free online tool for editing and converting PDF files easily.
