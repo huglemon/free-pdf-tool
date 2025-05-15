@@ -3,8 +3,7 @@
 nixPkgs = [
     "jdk17", "gradle", "libreoffice", "python3", 
     "python3Packages.weasyprint", "qpdf", "tesseract", 
-    "libreoffice", "python3-pip", "qpdf", "tesseract-ocr", 
-    "python3-venv", "poppler-utils", "ca-certificates",
+    "python3Packages.pip", "python3Packages.venv", "poppler_utils",
     "glib", "pango", "gobject-introspection", "cairo", "gtk3"
 ]
 # 保留apt安装方式
@@ -14,7 +13,7 @@ aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr", "python3-venv"
 # 使用虚拟环境安装Python包
 cmds = [
     # 安装系统依赖
-    "apt-get update && apt-get install -y libglib2.0-0 libgobject-2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libcairo2 libcairo-gobject2 gobject-introspection",
+    "apt-get update && apt-get install -y ca-certificates libglib2.0-0 libgobject-2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libcairo2 libcairo-gobject2 gobject-introspection",
     # Python 虚拟环境设置
     "python3 -m venv /opt/venv",
     "/opt/venv/bin/pip install unoconv weasyprint opencv-python-headless",
