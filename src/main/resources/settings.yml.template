@@ -77,7 +77,7 @@ premium:
       appId: ''
 
 mail:
-  enabled: true # set to 'true' to enable sending emails
+  enabled: false # set to 'true' to enable sending emails
   host: smtp.example.com # SMTP server hostname
   port: 587 # SMTP server port
   username: '' # SMTP server username
@@ -85,21 +85,21 @@ mail:
   from: '' # sender email address
 
 legal:
-  termsAndConditions: https://www.stirlingpdf.com/terms-and-conditions # URL to the terms and conditions of your application (e.g. https://example.com/terms). Empty string to disable or filename to load from local file in static folder
-  privacyPolicy: https://www.stirlingpdf.com/privacy-policy # URL to the privacy policy of your application (e.g. https://example.com/privacy). Empty string to disable or filename to load from local file in static folder
-  accessibilityStatement: '' # URL to the accessibility statement of your application (e.g. https://example.com/accessibility). Empty string to disable or filename to load from local file in static folder
-  cookiePolicy: '' # URL to the cookie policy of your application (e.g. https://example.com/cookie). Empty string to disable or filename to load from local file in static folder
-  impressum: '' # URL to the impressum of your application (e.g. https://example.com/impressum). Empty string to disable or filename to load from local file in static folder
+  termsAndConditions: https://www.stirlingpdf.com/terms-and-conditions # URL to the terms and conditions of your application (e.g. https://free-pdf-tool.com/terms). Empty string to disable or filename to load from local file in static folder
+  privacyPolicy: https://www.stirlingpdf.com/privacy-policy # URL to the privacy policy of your application (e.g. https://free-pdf-tool.com/privacy). Empty string to disable or filename to load from local file in static folder
+  accessibilityStatement: '' # URL to the accessibility statement of your application (e.g. https://free-pdf-tool.com/accessibility). Empty string to disable or filename to load from local file in static folder
+  cookiePolicy: '' # URL to the cookie policy of your application (e.g. https://free-pdf-tool.com/cookie). Empty string to disable or filename to load from local file in static folder
+  impressum: '' # URL to the impressum of your application (e.g. https://free-pdf-tool.com/impressum). Empty string to disable or filename to load from local file in static folder
 
 system:
   defaultLocale: en-US # set the default language (e.g. 'de-DE', 'fr-FR', etc)
-  googlevisibility: false # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
+  googlevisibility: true # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
   enableAlphaFunctionality: false # set to enable functionality which might need more testing before it fully goes live (this feature might make no changes)
   showUpdate: false # see when a new update is available
   showUpdateOnlyAdmin: false # only admins can see when a new update is available, depending on showUpdate it must be set to 'true'
   customHTMLFiles: false # enable to have files placed in /customFiles/templates override the existing template HTML files
   tessdataDir: /usr/share/tessdata # path to the directory containing the Tessdata files. This setting is relevant for Windows systems. For Windows users, this path should be adjusted to point to the appropriate directory where the Tessdata files are stored.
-  enableAnalytics: null # set to 'true' to enable analytics, set to 'false' to disable analytics; for enterprise users, this is set to true
+  enableAnalytics: false # set to 'true' to enable analytics, set to 'false' to disable analytics; for enterprise users, this is set to true
   enableUrlToPDF: false # Set to 'true' to enable URL to PDF, INTERNAL ONLY, known security issues, should not be used externally
   disableSanitize: false # set to true to disable Sanitize HTML; (can lead to injections in HTML)
   datasource:
@@ -121,9 +121,9 @@ system:
   fileUploadLimit: '' # Defaults to "". No limit when string is empty. Set a number, between 0 and 999, followed by one of the following strings to set a limit. "KB", "MB", "GB".
 
 ui:
-  appName: '' # application's visible name
-  homeDescription: '' # short description or tagline shown on the homepage
-  appNameNavbar: '' # name displayed on the navigation bar
+  appName: 'Free-PDF-Tool' # application's visible name
+  homeDescription: 'A free online PDF tool offering various PDF editing and conversion features like merge, split, compress, and more.' # short description or tagline shown on the homepage
+  appNameNavbar: 'Free-PDF-Tool' # name displayed on the navigation bar
   languages: [] # If empty, all languages are enabled. To display only German and Polish ["de_DE", "pl_PL"]. British English is always enabled.
 
 endpoints:
