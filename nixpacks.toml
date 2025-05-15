@@ -1,32 +1,45 @@
 [phases.setup]
 # 移除 python3Packages.unoconv (不存在)
-nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.weasyprint", "qpdf", "tesseract", "libreoffice", "python3-pip", "qpdf", "tesseract-ocr", "python3-venv", "poppler-utils", "ca-certificates"]
+nixPkgs = [
+    "jdk17", "gradle", "libreoffice", "python3", 
+    "python3Packages.weasyprint", "qpdf", "tesseract", 
+    "libreoffice", "python3-pip", "qpdf", "tesseract-ocr", 
+    "python3-venv", "poppler-utils", "ca-certificates",
+    "glib", "pango", "gobject-introspection", "cairo", "gtk3"
+]
 # 保留apt安装方式
 aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr", "python3-venv", "poppler-utils"]
 
 [phases.install]
 # 使用虚拟环境安装Python包
 cmds = [
-  "python3 -m venv /opt/venv",
-  "/opt/venv/bin/pip install unoconv weasyprint opencv-python-headless",
-  "ln -s /usr/bin/pdftohtml /usr/local/bin/pdftohtml || true",
-  "ln -s /opt/venv/bin/unoconv /usr/local/bin/unoconv || true",
-  "ln -s /opt/venv/bin/weasyprint /usr/local/bin/weasyprint || true",
-  "ln -s /usr/bin/soffice /usr/local/bin/soffice || true",
-  "ln -s /usr/bin/qpdf /usr/local/bin/qpdf || true",
-  "ln -s /usr/bin/tesseract /usr/local/bin/tesseract || true",
-  "chmod +x /opt/venv/bin/unoconv /opt/venv/bin/weasyprint",
-  "update-ca-certificates",
-  "echo '#!/bin/bash' > /app/start.sh",
-  "echo 'export PATH=/usr/local/bin:/opt/venv/bin:/usr/bin:$PATH' >> /app/start.sh",
-  "echo 'export PYTHONPATH=/usr/lib/libreoffice/program:/opt/venv/lib/python3.12/site-packages' >> /app/start.sh",
-  "echo 'export UNO_PATH=/usr/lib/libreoffice/program' >> /app/start.sh",
-  "echo 'export URE_BOOTSTRAP=file:///usr/lib/libreoffice/program/fundamentalrc' >> /app/start.sh",
-  "echo 'export GRADLE_OPTS=\"-Dorg.gradle.daemon=false -Dorg.gradle.internal.http.connectionTimeout=180000 -Dorg.gradle.internal.http.socketTimeout=180000\"' >> /app/start.sh",
-  "echo 'export JAVA_OPTS=\"-Djavax.net.ssl.trustStore=/etc/ssl/certs/ca-certificates.crt -Djavax.net.ssl.trustStoreType=JKS -Djavax.net.ssl.trustStorePassword=changeit\"' >> /app/start.sh",
-  "echo '/opt/venv/bin/unoconv --listener &' >> /app/start.sh",
-  "echo 'java -jar $(find build/libs/ -name \"*.jar\" ! -name \"*-plain.jar\")' >> /app/start.sh",
-  "chmod +x /app/start.sh"
+    # 安装系统依赖
+    "apt-get update && apt-get install -y libglib2.0-0 libgobject-2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libcairo2 libcairo-gobject2 gobject-introspection",
+    # Python 虚拟环境设置
+    "python3 -m venv /opt/venv",
+    "/opt/venv/bin/pip install unoconv weasyprint opencv-python-headless",
+    # 创建软链接
+    "ln -s /usr/bin/pdftohtml /usr/local/bin/pdftohtml || true",
+    "ln -s /opt/venv/bin/unoconv /usr/local/bin/unoconv || true",
+    "ln -s /opt/venv/bin/weasyprint /usr/local/bin/weasyprint || true",
+    "ln -s /usr/bin/soffice /usr/local/bin/soffice || true",
+    "ln -s /usr/bin/qpdf /usr/local/bin/qpdf || true",
+    "ln -s /usr/bin/tesseract /usr/local/bin/tesseract || true",
+    "chmod +x /opt/venv/bin/unoconv /opt/venv/bin/weasyprint",
+    "update-ca-certificates",
+    # 创建启动脚本
+    "echo '#!/bin/bash' > /app/start.sh",
+    "echo 'export PATH=/usr/local/bin:/opt/venv/bin:/usr/bin:$PATH' >> /app/start.sh",
+    "echo 'export PYTHONPATH=/usr/lib/libreoffice/program:/opt/venv/lib/python3.11/site-packages' >> /app/start.sh",
+    "echo 'export UNO_PATH=/usr/lib/libreoffice/program' >> /app/start.sh",
+    "echo 'export URE_BOOTSTRAP=file:///usr/lib/libreoffice/program/fundamentalrc' >> /app/start.sh",
+    "echo 'export GRADLE_OPTS=\"-Dorg.gradle.daemon=false -Dorg.gradle.internal.http.connectionTimeout=180000 -Dorg.gradle.internal.http.socketTimeout=180000\"' >> /app/start.sh",
+    "echo 'export JAVA_OPTS=\"-Djavax.net.ssl.trustStore=/etc/ssl/certs/ca-certificates.crt -Djavax.net.ssl.trustStoreType=JKS -Djavax.net.ssl.trustStorePassword=changeit\"' >> /app/start.sh",
+    "echo 'export GI_TYPELIB_PATH=/usr/lib/girepository-1.0' >> /app/start.sh",
+    "echo 'export LD_LIBRARY_PATH=/usr/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH' >> /app/start.sh",
+    "echo '/opt/venv/bin/unoconv --listener &' >> /app/start.sh",
+    "echo 'java -jar $(find build/libs/ -name \"*.jar\" ! -name \"*-plain.jar\")' >> /app/start.sh",
+    "chmod +x /app/start.sh"
 ]
 
 [phases.build]
