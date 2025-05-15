@@ -1,8 +1,11 @@
 [phases.setup]
-nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.unoconv", "python3Packages.weasyprint", "qpdf", "tesseract"]
+# 移除 python3Packages.unoconv (不存在)
+nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.weasyprint", "qpdf", "tesseract"]
+# 保留apt安装方式
 aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr"]
 
 [phases.install]
+# 保留pip安装unoconv
 cmds = ["pip3 install unoconv weasyprint"]
 
 [phases.build]
