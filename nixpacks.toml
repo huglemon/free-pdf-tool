@@ -1,6 +1,6 @@
 [phases.setup]
 # 移除 python3Packages.unoconv (不存在)
-nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.weasyprint", "qpdf", "tesseract"]
+nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.weasyprint", "qpdf", "tesseract", "libreoffice", "python3-pip", "qpdf", "tesseract-ocr", "python3-venv", "poppler-utils", "ca-certificates"]
 # 保留apt安装方式
 aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr", "python3-venv", "poppler-utils"]
 
@@ -12,19 +12,25 @@ cmds = [
   "ln -s /usr/bin/pdftohtml /usr/local/bin/pdftohtml || true",
   "ln -s /opt/venv/bin/unoconv /usr/local/bin/unoconv || true",
   "ln -s /opt/venv/bin/weasyprint /usr/local/bin/weasyprint || true",
+  "ln -s /usr/bin/soffice /usr/local/bin/soffice || true",
+  "ln -s /usr/bin/qpdf /usr/local/bin/qpdf || true",
+  "ln -s /usr/bin/tesseract /usr/local/bin/tesseract || true",
   "chmod +x /opt/venv/bin/unoconv /opt/venv/bin/weasyprint",
+  "update-ca-certificates",
   "echo '#!/bin/bash' > /app/start.sh",
-  "echo 'export PATH=/opt/venv/bin:$PATH' >> /app/start.sh",
-  "echo 'export PYTHONPATH=/usr/lib/libreoffice/program:/opt/venv/lib' >> /app/start.sh",
+  "echo 'export PATH=/usr/local/bin:/opt/venv/bin:/usr/bin:$PATH' >> /app/start.sh",
+  "echo 'export PYTHONPATH=/usr/lib/libreoffice/program:/opt/venv/lib/python3.12/site-packages' >> /app/start.sh",
   "echo 'export UNO_PATH=/usr/lib/libreoffice/program' >> /app/start.sh",
   "echo 'export URE_BOOTSTRAP=file:///usr/lib/libreoffice/program/fundamentalrc' >> /app/start.sh",
+  "echo 'export GRADLE_OPTS=\"-Dorg.gradle.daemon=false -Dorg.gradle.internal.http.connectionTimeout=180000 -Dorg.gradle.internal.http.socketTimeout=180000\"' >> /app/start.sh",
+  "echo 'export JAVA_OPTS=\"-Djavax.net.ssl.trustStore=/etc/ssl/certs/ca-certificates.crt -Djavax.net.ssl.trustStoreType=JKS -Djavax.net.ssl.trustStorePassword=changeit\"' >> /app/start.sh",
   "echo '/opt/venv/bin/unoconv --listener &' >> /app/start.sh",
   "echo 'java -jar $(find build/libs/ -name \"*.jar\" ! -name \"*-plain.jar\")' >> /app/start.sh",
   "chmod +x /app/start.sh"
 ]
 
 [phases.build]
-cmds = ["./gradlew clean build -x check -x test"]
+cmds = ["./gradlew clean build -x check -x test --no-daemon --stacktrace"]
 
 [start]
 # 确保启动时可以访问虚拟环境中的命令
