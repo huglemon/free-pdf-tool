@@ -2,14 +2,31 @@
 # 移除 python3Packages.unoconv (不存在)
 nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.weasyprint", "qpdf", "tesseract"]
 # 保留apt安装方式
-aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr"]
+aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr", "python3-venv", "poppler-utils"]
 
 [phases.install]
-# 保留pip安装unoconv
-cmds = ["pip3 install unoconv weasyprint"]
+# 使用虚拟环境安装Python包
+cmds = [
+  "python3 -m venv /opt/venv",
+  "/opt/venv/bin/pip install unoconv weasyprint opencv-python-headless",
+  "ln -s /usr/bin/pdftohtml /usr/local/bin/pdftohtml",
+  "ln -s /opt/venv/bin/unoconv /usr/local/bin/unoconv",
+  "ln -s /opt/venv/bin/weasyprint /usr/local/bin/weasyprint",
+  "chmod +x /opt/venv/bin/unoconv /opt/venv/bin/weasyprint"
+]
 
 [phases.build]
 cmds = ["./gradlew clean build -x check -x test"]
 
 [start]
-cmd = "java -jar $(find build/libs/ -name '*.jar' ! -name '*-plain.jar')"
+# 确保启动时可以访问虚拟环境中的命令
+cmd = """
+export PATH=/opt/venv/bin:$PATH
+export PYTHONPATH=/usr/lib/libreoffice/program:/opt/venv/lib
+export UNO_PATH=/usr/lib/libreoffice/program
+export URE_BOOTSTRAP=file:///usr/lib/libreoffice/program/fundamentalrc
+# 启动LibreOffice服务器
+/opt/venv/bin/unoconv --listener &
+# 启动主应用
+java -jar $(find build/libs/ -name '*.jar' ! -name '*-plain.jar')
+"""
