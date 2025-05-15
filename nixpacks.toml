@@ -1,0 +1,12 @@
+[phases.setup]
+nixPkgs = ["jdk17", "gradle", "libreoffice", "python3", "python3Packages.unoconv", "python3Packages.weasyprint", "qpdf", "tesseract"]
+aptPkgs = ["libreoffice", "python3-pip", "qpdf", "tesseract-ocr"]
+
+[phases.install]
+cmds = ["pip3 install unoconv weasyprint"]
+
+[phases.build]
+cmds = ["./gradlew clean build -x check -x test"]
+
+[start]
+cmd = "java -jar $(find build/libs/ -name '*.jar' ! -name '*-plain.jar')"
